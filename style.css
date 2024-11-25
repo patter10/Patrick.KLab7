@@ -1,0 +1,42 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333; /* Dark text */
+}
+
+/* Header styles */
+header {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 1em 0;
+}
+
+/* Section styles */
+section {
+  margin: 2em auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Footer styles */
+footer {
+  margin-top: 2em;
+  font-size: 0.8em;
+  color: #666; /* Grey text */
+}
+
+h2 {
+  color: #4CAF50; /* Green heading text */
+}
+
+#city, #country, #condition, #isp-name {
+  font-weight: bold;
+}

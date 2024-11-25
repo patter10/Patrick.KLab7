@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript & APIs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1em 0;
+    }
+    footer {
+      margin-top: 2em;
+      font-size: 0.8em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+  <header>
+    <h1>JavaScript & APIs</h1>
+  </header>
+  <main>
+    <p>With basic knowledge of API's and Javascript that I have obtained, I can find out the following for you:</p>
+    <section id="location">
+      <h2>Your Location</h2>
+      <p> Your City: <span id="city">Fetching...</span></p>
+      <p>Your Country: <span id="country">Fetching...</span></p>
+    </section>
+    <section id="weather">
+      <h2>The Weather</h2>
+      <p>Condition: <span id="condition">Fetching...</span></p>
+    </section>
+    <section id="isp">
+      <h2>Your Internet Service Provider</h2>
+      <p>ISP: <span id="isp-name">Fetching...</span></p>
+    </section>
+  </main>
+  <footer>
+    Powered by JavaScript and APIs | © 2024
+  </footer>
+  <script>
+    // Fetch location data
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('city').textContent = data.city || 'N/A';
+        document.getElementById('country').textContent = data.country_name || 'N/A';
+        document.getElementById('isp-name').textContent = data.org || 'N/A';
+      })
+      .catch(error => console.error('Error fetching location data:', error));
+
+    // Fetch weather data (example for Belmopan, Belize)
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Belmopan,bz&appid=YOUR_API_KEY&units=metric')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('condition').textContent = data.weather[0].description || 'N/A';
+      })
+      .catch(error => console.error('Error fetching weather data:', error));
+  </script>
+</body>
+</html>
